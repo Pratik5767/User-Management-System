@@ -47,7 +47,14 @@ UserManagementSystem/
    - Open your browser and navigate to `http://localhost:8080/UserManagementSystem`
 
 ## 📸 Screenshots
-- *[Include images of your login page, user dashboard, and CRUD operations]*
+1. ***Register Page***
+![img1](https://github.com/user-attachments/assets/1ee49557-a70c-4813-898a-728fde8157f6)
+
+2. ***User Data***
+![img2](https://github.com/user-attachments/assets/77d81194-e3f1-4c6a-a84c-804b1db852a0)
+
+3. ***Edit Page***
+![img3](https://github.com/user-attachments/assets/b240c027-9734-4bbe-99c5-206d4ee80d04)
 
 ## 👤 Author
 - **Pratik Salunkhe**
