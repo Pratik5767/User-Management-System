@@ -20,8 +20,8 @@ public class JdbcUtils {
 	}
 
 	public static Connection getConnection() throws SQLException, IOException {
-		FileInputStream fis = new FileInputStream(
-				"D:\\Pratik\\Servlet and JSP\\UserManagementSystem\\src\\main\\java\\com\\properties\\applications.properties");
+		String path = "D:\\Pratik\\git\\UserManagementRepo\\UserManagementSystem\\src\\main\\java\\com\\properties\\applications.properties";
+		FileInputStream fis = new FileInputStream(path);
 		Properties properties = new Properties();
 		properties.load(fis);
 

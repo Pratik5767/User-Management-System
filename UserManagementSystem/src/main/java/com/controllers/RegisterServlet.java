@@ -41,6 +41,23 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		// link the bootstrap
 		out.println("<link rel='stylesheet' href='css/bootstrap.css'></link>");
+		out.println("<style>");
+        out.println(".response-card {");
+        out.println("margin: auto;");
+        out.println("width: 60%;");
+        out.println("margin-top: 50px;");
+        out.println("box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);");
+        out.println("border-radius: 10px;");
+        out.println("overflow: hidden;");
+        out.println("}");
+        out.println(".response-card h2 {");
+        out.println("padding: 20px;");
+        out.println("}");
+        out.println(".btn-home {");
+        out.println("margin-top: 20px;");
+        out.println("}");
+        out.println("</style>");
+        
 		//get the values
 		String name = request.getParameter("userName");
 		String email = request.getParameter("email");
@@ -72,7 +89,7 @@ public class RegisterServlet extends HttpServlet {
 			}
 				
 			int count = preparedStatement.executeUpdate();
-			out.println("<div class='card' style='margin: auto; width: 900px; margin-top: 100px;'>");
+			out.println("<div class='card response-card'>");
 			if (count == 1) {
 				out.println("<h2 class='bg-success text-light text-center'>Record Registered Successfully</h2>");
 			} else {
@@ -87,7 +104,9 @@ public class RegisterServlet extends HttpServlet {
 		} finally {
 			try {
 				JdbcUtils.closeConnection(connection, preparedStatement, null);
+				out.println("<div class='text-center btn-home'>");				
 				out.println("<a href='home.html'><button class='btn btn-outline-primary'>Home</button></a>");
+				out.println("</div>");
 				out.println("</div>");
 				out.close();
 			} catch (SQLException e) {

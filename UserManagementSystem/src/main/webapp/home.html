@@ -4,53 +4,83 @@
 <head>
 	<meta charset="UTF-8">
 	<title>User Management System</title>
-	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/bootstrap.css" />
 	<style>
-		#frm{
+		#frm {
 			margin: auto;
 			width: 500px;
 			margin-top: 50px;
 		}
-		
+
 		marquee {
 			margin-top: 10px;
+		}
+
+		body {
+			background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+			color: #fff;
+		}
+
+		.table-hover td {
+			vertical-align: middle;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		.card-header {
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.card-footer {
+			text-align: center;
+		}
+
+		.btn-outline-success a {
+			text-decoration: none;
+			color: inherit;
 		}
 	</style>
 </head>
 
 <body class="container-fluid">
 	<marquee>
-		<h2 class="text-primary">Register Here</h2>
+		<h2 class="text-warning">Register Here for an Exciting Experience!</h2>
 	</marquee>
-	
-	<form action="register" method="post" class="form card" id="frm">
-		<h2 class="bg-danger text-white card-header">Registeration Form</h2>
+
+	<form action="register" method="post" class="form card p-4" id="frm">
+		<h2 class="bg-danger text-white card-header">Registration Form</h2>
 
 		<table class="table table-hover">
 			<tr>
-				<td>Name</td>
-				<td><input type="text" name="userName" required /></td>
+				<td><strong>Name</strong></td>
+				<td><input type="text" name="userName" class="form-control" required /></td>
 			</tr>
-			
+
 			<tr>
-				<td>Email</td>
-				<td><input type="email" name="email" required /></td>
+				<td><strong>Email</strong></td>
+				<td><input type="email" name="email" class="form-control" required /></td>
 			</tr>
-			
+
 			<tr>
-				<td>Mobile</td>
-				<td><input type="text" name="mobile" required/></td>
+				<td><strong>Mobile</strong></td>
+				<td><input type="text" name="mobile" class="form-control" required /></td>
 			</tr>
-			
+
 			<tr>
-				<td>DOB</td>
-				<td><input type="date" name="dob" /></td>
+				<td><strong>DOB</strong></td>
+				<td><input type="date" name="dob" class="form-control" /></td>
 			</tr>
-			
+
 			<tr>
-				<td>City</td>
+				<td><strong>City</strong></td>
 				<td>
-					<select name="city">
+					<select name="city" class="form-select">
 						<option value="pune">Pune</option>
 						<option value="mumbai">Mumbai</option>
 						<option value="delhi">Delhi</option>
@@ -59,30 +89,33 @@
 					</select>
 				</td>
 			</tr>
-			
+
 			<tr>
-				<td>Gender</td>
+				<td><strong>Gender</strong></td>
 				<td>
-					<input type="radio" name="gender" value="male"/>Male &nbsp;
-					<input type="radio" name="gender" value="female"/>Female
+					<input type="radio" name="gender" value="male" /> Male &nbsp;
+					<input type="radio" name="gender" value="female" /> Female
 				</td>
 			</tr>
-			
+
 			<tr class="card-footer">
 				<td>
-					<button type="submit" class="btn btn-outline-success">Register</button>
+					<button type="submit" class="btn btn-outline-success w-100">Register</button>
 				</td>
 				<td>
-					<button type="reset" class="btn btn-outline-danger">Cancel</button>
+					<button type="reset" class="btn btn-outline-danger w-100">Cancel</button>
 				</td>
 			</tr>
 		</table>
-		
-		<button class="btn btn-outline-success d-block">
+
+		<button class="btn btn-outline-info w-100 mt-3">
 			<a href="showData">Show Users</a>
 		</button>
 	</form>
-	
+
+	<footer class="text-center mt-5">
+		<p>&copy; 2024 User Management System. All Rights Reserved.</p>
+	</footer>
 </body>
 
 </html>

@@ -40,6 +40,27 @@ public class ShowUserServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		// link the bootstrap
 		out.println("<link rel='stylesheet' href='css/bootstrap.css'></link>");
+		out.println("<style>");
+        out.println(".data-container {");
+        out.println("    margin: auto;");
+        out.println("    width: 80%;");
+        out.println("    margin-top: 50px;");
+        out.println("    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);");
+        out.println("    border-radius: 10px;");
+        out.println("    overflow: hidden;");
+        out.println("}");
+        out.println(".table-container {");
+        out.println("    overflow-x: auto;");
+        out.println("}");
+        out.println("th, td {");
+        out.println("    text-align: center;");
+        out.println("    vertical-align: middle;");
+        out.println("}");
+        out.println(".btn-home {");
+        out.println("    margin-top: 20px;");
+        out.println("    text-align: center;");
+        out.println("}");
+        out.println("</style>");
 		out.println("<marquee><h2 class='text-primary'>User Data</h2></marquee>");
 		// set up database connection
 		try {
@@ -52,8 +73,10 @@ public class ShowUserServlet extends HttpServlet {
 			if (preparedStatement != null) {
 				resultSet = preparedStatement.executeQuery();
 			}
-			out.println("<div style='margin:auto; width:900px; margin-top:100px'>");
-			out.println("<table class='table table-hover table-striped'>");
+			out.println("<div class='data-container'>");
+			out.println("<div class='table-container'>");
+			out.println("<table class='table table-bordered table-hover table-striped'>");
+			out.println("<thead class='table-dark'>");
 			out.println("<tr>");
 			out.println("<th>ID</th>");
 			out.println("<th>Name</th>");
@@ -65,6 +88,8 @@ public class ShowUserServlet extends HttpServlet {
 			out.println("<th>Edit</th>");
 			out.println("<th>Delete</th>");
 			out.println("</tr>");
+			out.println("</thead>");
+			out.println("</tbody>");			
 			if (resultSet != null) {
 				while (resultSet.next()) {
 					out.println("<tr>");
@@ -75,12 +100,14 @@ public class ShowUserServlet extends HttpServlet {
 					out.println("<td>" + resultSet.getDate(5) + "</td>");
 					out.println("<td>" + resultSet.getString(6) + "</td>");
 					out.println("<td>" + resultSet.getString(7) + "</td>");
-					out.println("<td><a href='editurl?id="+resultSet.getInt(1)+"'>Edit</a></td>");
-					out.println("<td><a href='deleteurl?id="+resultSet.getInt(1)+"'>Delete</a></td>");
+					out.println("<td><a href='editurl?id="+resultSet.getInt(1)+"' class='btn btn-outline-warning btn-sm'>Edit</a></td>");
+					out.println("<td><a href='deleteurl?id="+resultSet.getInt(1)+"' class='btn btn-outline-danger btn-sm'>Delete</a></td>");
 					out.println("</tr>");
 				}
 			}
+			out.println("</tbody>");
 			out.println("</table>");
+			out.println("</div>");
 		} catch (SQLException e) {
 			out.println("<h2 class='bg-danger text-light text-center'>" + e.getMessage() + "</h2>");
 			e.printStackTrace();
@@ -90,7 +117,9 @@ public class ShowUserServlet extends HttpServlet {
 		} finally {
 			try {
 				JdbcUtils.closeConnection(connection, preparedStatement, resultSet);
-				out.println("<button class='btn btn-outline-primary d-block'><a href='home.html'>Home</a></button>");
+				out.println("<div class='btn-home'>");
+				out.println("<a href='home.html' class='btn btn-outline-primary'>Home</a>");
+				out.println("</div>");
 				out.println("</div>");
 				out.close();
 			} catch (SQLException e) {

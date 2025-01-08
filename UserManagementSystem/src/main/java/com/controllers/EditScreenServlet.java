@@ -42,7 +42,8 @@ public class EditScreenServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		// link the bootstrap
 		out.println("<link rel='stylesheet' href='css/bootstrap.css'></link>");
-		out.println("<marquee><h2 class='text-primary'>User Data</h2></marquee>");
+		out.println("<div class='container mt-5'>");
+		out.println("<h2 class='text-center text-primary mb-4'>Edit User Data</h2>");
 		// set up database connection
 		try {
 			connection = JdbcUtils.getConnection();
@@ -58,45 +59,46 @@ public class EditScreenServlet extends HttpServlet {
 			
 			if (resultSet != null) {
 				if (resultSet.next()) {					
-					out.println("<div style='margin:auto; width:500px; margin-top:100px'>");
+					out.println("<div class='card p-4 shadow-lg' style='max-width: 600px; margin: auto;'>");
 					out.println("<form action='edit?id="+id+"' method='post'>");
-					out.println("<table class='table table-hover table-striped'>");
+					out.println("<table class='table table-borderless'>");
 					out.println("<tr>");
-					out.println("<td>Name</td>");
-					out.println("<td><input type='text' name='userName' value='"+resultSet.getString(1)+"'/></td>");
+					out.println("<td><strong>Name</strong></td>");
+					out.println("<td><input type='text' class='form-control' name='userName' value='"+resultSet.getString(1)+"'/></td>");
 					out.println("</tr>");					
 					
 					out.println("<tr>");
-					out.println("<td>Email</td>");
-					out.println("<td><input type='email' name='email' value='"+resultSet.getString(2)+"'/></td>");
+					out.println("<td><strong>Email</strong></td>");
+					out.println("<td><input type='email' class='form-control' name='email' value='"+resultSet.getString(2)+"'/></td>");
 					out.println("</tr>");
 					
 					out.println("<tr>");
-					out.println("<td>Mobile</td>");
-					out.println("<td><input type='text' name='mobile' value='"+resultSet.getString(3)+"'/></td>");
+					out.println("<td><strong>Mobile</strong></td>");
+					out.println("<td><input type='text' class='form-control' name='mobile' value='"+resultSet.getString(3)+"'/></td>");
 					out.println("</tr>");
 					
 					out.println("<tr>");					
-					out.println("<td>DOB</td>");
-					out.println("<td><input type='date' name='dob' value='"+resultSet.getDate(4)+"'/></td>");
+					out.println("<td><strong>DOB</strong></td>");
+					out.println("<td><input type='date' class='form-control' name='dob' value='"+resultSet.getDate(4)+"'/></td>");
 					out.println("</tr>");
 					
 					out.println("<tr>");
-					out.println("<td>City</td>");
-					out.println("<td><input type='text' name='city' value='"+resultSet.getString(5)+"'/></td>");
+					out.println("<td><strong>City</strong></td>");
+					out.println("<td><input type='text' class='form-control' name='city' value='"+resultSet.getString(5)+"'/></td>");
 					out.println("</tr>");
 
 					out.println("<tr>");
-					out.println("<td>Gender</td>");
-					out.println("<td><input type='text' name='gender' value='"+resultSet.getString(6)+"'/></td>");
+					out.println("<td><strong>Gender</strong></td>");
+					out.println("<td><input type='text' class='form-control' name='gender' value='"+resultSet.getString(6)+"'/></td>");
 					out.println("</tr>");
 
 					out.println("<tr>");
-					out.println("<td><button class='btn btn-outline-success' type='submit'>Edit</button</td>");
-					out.println("<td><button class='btn btn-outline-danger' type='reset'>Cancel</button></td>");
+					out.println("<td><button class='btn btn-outline-success' type='submit'>Edit</button></td>");
+		            out.println("<td><button class='btn btn-outline-danger' type='reset'>Reset</button></td>");
 					out.println("</tr>");
 					out.println("</table>");
 					out.println("</form>");
+					out.println("</div>");
 				}
 			}
 		} catch (SQLException e) {
@@ -108,8 +110,10 @@ public class EditScreenServlet extends HttpServlet {
 		} finally {
 			try {
 				JdbcUtils.closeConnection(connection, preparedStatement, null);
-				out.println("<a href='home.html'><button class='btn btn-outline-primary'>Home</button></a>");
-				out.println("</div>");
+				out.println("<div class='text-center mt-3'>");
+		        out.println("<a href='home.html' class='btn btn-outline-primary'>Back to Home</a>");
+		        out.println("</div>");
+		        out.println("</div>");
 				out.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
