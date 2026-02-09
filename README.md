@@ -35,7 +35,7 @@ UserManagementSystem/
 ## ⚙️ Installation & Setup
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/user-management-system.git
+   git clone https://github.com/Pratik5767/user-management-system.git
    ```
 2. **Set Up Database:**
    - Import the SQL file located in `database/`
@@ -52,10 +52,6 @@ UserManagementSystem/
 ## 👤 Author
 - **Pratik Salunkhe**
 - **Email:** pratikvsalunkhe924@gmail.com
-<<<<<<< HEAD
 - **LinkedIn:** [click here](https://www.linkedin.com/in/pratik-salunkhe-84157a269/)
-=======
-- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/pratik-salunkhe-84157a269/)
->>>>>>> 107497f (commiting the code)
 
 **Show your support by giving a ⭐ if you liked this project!**
