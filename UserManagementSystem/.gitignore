@@ -1,5 +1,0 @@
-# Ignore application.properties
-applications.properties
-# If it's in a specific folder
-src/main/java/com/properties/applications.properties
-/build/

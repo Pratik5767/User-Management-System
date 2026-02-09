@@ -20,13 +20,12 @@ public class JdbcUtils {
 	}
 
 	public static Connection getConnection() throws SQLException, IOException {
-		String path = "D:\\Pratik\\git\\UserManagementRepo\\UserManagementSystem\\src\\main\\java\\com\\properties\\applications.properties";
+		String path = "D:\\Pratik\\Servlet-Projects-Workspace\\UserManagementSystem\\src\\main\\java\\com\\properties\\applications.properties";
 		FileInputStream fis = new FileInputStream(path);
 		Properties properties = new Properties();
 		properties.load(fis);
 
-		Connection connection = DriverManager.getConnection(properties.getProperty("url"),
-				properties.getProperty("userName"), properties.getProperty("password"));
+		Connection connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("userName"), properties.getProperty("password"));
 		return connection;
 	}
 

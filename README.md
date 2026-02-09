@@ -52,6 +52,10 @@ UserManagementSystem/
 ## 👤 Author
 - **Pratik Salunkhe**
 - **Email:** pratikvsalunkhe924@gmail.com
+<<<<<<< HEAD
 - **LinkedIn:** [click here](https://www.linkedin.com/in/pratik-salunkhe-84157a269/)
+=======
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/pratik-salunkhe-84157a269/)
+>>>>>>> 107497f (commiting the code)
 
 **Show your support by giving a ⭐ if you liked this project!**

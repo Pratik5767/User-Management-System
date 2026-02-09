@@ -1,0 +1,66 @@
+# ================================
+# Java
+# ================================
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# ================================
+# Build directories
+# ================================
+/target/
+/build/
+/bin/
+/out/
+
+# ================================
+# IDEs
+# ================================
+# VS Code
+.vscode/
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# ================================
+# OS files
+# ================================
+.DS_Store
+Thumbs.db
+
+# ================================
+# Tomcat / Server
+# ================================
+/logs/
+/temp/
+/work/
+
+# ================================
+# Environment / Config
+# ================================
+.env
+*.properties
+*.yml
+*.yaml
+
+# ================================
+# Generated / Cache
+# ================================
+*.cache
+*.tmp
+
+
+# Ignore application.properties
+applications.properties
+
+
+# If it's in a specific folder
+src/main/java/com/properties/applications.properties
